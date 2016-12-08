@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <header>
+    <% if current_user %>
+      <%= current_user.user_name %>
+      <%= button_to "Logout", "/sessions", method: :delete %>
+    <% else %>
+      <%= link_to "Login", new_sessions_url %>
+    <% end %>
+  </header>
+  <title>NinetyNineCatsDay1</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if flash[:messages] %>
+  <ul>
+    <% flash[:messages].each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= yield %>
+
+</body>
+<footer>
+  This is our 99 Cats site. Please feel free to browse!
+
+  <%= yield :footer %>
+</footer>
+</html>
