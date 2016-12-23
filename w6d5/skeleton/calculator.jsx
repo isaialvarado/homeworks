@@ -59,6 +59,12 @@ class Calculator extends React.Component {
     this.setState({ num1: "", num2: "", result: 0 });
   }
 
+  buttonClick(func, innerText) {
+    return (
+      <button onClick={func.bind(this)}>{innerText}</button>
+    );
+  }
+
   render() {
     const { num1, num2, result } = this.state;
     return (
@@ -66,12 +72,12 @@ class Calculator extends React.Component {
         <h1>{result}</h1>
         <input type="text" onChange={this.setNum1} value={num1}></input>
         <input type="text" onChange={this.setNum2} value={num2}></input>
-        <button type="submit" onClick={this.clear}>Clear</button>
+        {this.buttonClick(this.clear, "Clear")}
         <br />
-        <button type="submit" onClick={this.add}>+</button>
-        <button type="submit" onClick={this.subtract}>-</button>
-        <button type="submit" onClick={this.multiply}>*</button>
-        <button type="submit" onClick={this.divide}>/</button>
+        {this.buttonClick(this.add, "+")}
+        {this.buttonClick(this.subtract, "-")}
+        {this.buttonClick(this.multiply, "*")}
+        {this.buttonClick(this.divide, "/")}
       </div>
     );
   }
