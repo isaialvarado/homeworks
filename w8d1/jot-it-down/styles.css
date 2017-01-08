@@ -1,0 +1,34 @@
+.splash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15%;
+}
+
+.splash {
+  position: relative;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.splash img {
+  width: 100%;
+}
+
+.splash-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 40%;
+  width: 100%;
+  font-size: 25px;
+  color: black;
+}
+
+.splash-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2% 30%;
+}
